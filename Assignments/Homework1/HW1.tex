@@ -1,0 +1,415 @@
+\documentclass[11pt]{exam}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+% in order to compile this file you need to get 'headers.tex' from
+% Canvas and change the line below to the appropriate file path
+\input{headers.tex}
+
+\geometry{left=2.5 cm,right=2.5 cm,top=2.5 cm,bottom=2.5 cm}
+\definecolor{mygreen}{rgb}{0,0.6,0}  
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82} 
+\definecolor{background}{rgb}{0.963,0.963,0.963}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\newcommand{\hwnum}{1}
+\newcommand{\duedate}{May 29 23:59, 2022}
+
+\hwheader   % header for homework
+\printanswers
+
+\begin{document}
+\setlength{\parindent}{0pt}
+\section*{Before you start:}
+
+\subsection*{Homework Files}
+You can download the starter files for coding as well as this \textit{tex} file (you only need to modify \textit{HW1.tex}) on canvas and do your homework with latex. Or you can scan your handwriting, convert to pdf file, and upload it to canvas before the due date. If you choose to write down your answers by hand, you can directly download the pdf file on canvas which provides more blank space for solution box.\\
+
+\subsection*{Submission Form}
+A pdf file as your solution named as VE281\_HW1\_[Your Student ID]\_[Your name].pdf uploaded to canvas
+
+Estimated time used for this homework: \textbf{4-5 hours.}
+\\\\
+
+\newpage
+\section*{0\quad Student Info (0 point)}
+Your name and student id:
+\begin{solution}
+    Yinchen Ni ~~ 520370910026
+\end{solution}
+
+\section{Complexity Analysis (28 points)}
+
+\begin{enumerate}[(a)] \label{prb:tiger_code}
+
+\item What is the time complexity of the following function? (6 points)
+\begin{lstlisting}[language=c++]
+void question_1a(unsigned int n) {
+	 int result = 0;
+	 for (int i = 1; i < n; i *= 2) {
+	 	for (int j = 1; j * j < n; j++) {
+	 		result += j;
+	 	}
+	 }
+	cout << result << endl;
+}
+\end{lstlisting}
+
+\begin{solution}
+    $O\left(\sqrt{n} \log n\right)$
+\end{solution}
+
+\item What is the time complexity of the following function? (6 points)
+\begin{lstlisting}[language=c++]
+void question_1b(unsigned int m, unsigned int n, unsigned int p) {
+	 int count = 0;
+	 for (int i = m/2; i < m; i++) {
+	 	for (int j = 1; j < n * n; j++) {
+	 		count++;
+	 	}
+		for (int j = 114514; j > p; j--) {
+			count--;
+		}	 
+	 }
+	cout << count << endl;
+}
+\end{lstlisting}
+
+\begin{solution}
+    $O\left(m n^2\right)$
+\end{solution}
+
+\item Mr. Blue Tiger wants to create his own version of fibonacci sequence. Since 3 is his favorite number, he decides that any element should be the sum of its previous three elements. Can you help him figure out the time complexity of his recursive function? Select \textbf{All} the answers that are correct, and state your reason. (6 points)
+\begin{lstlisting}[language=c++]
+int TigerNacci(unsigned int n) {
+	if (n <= 3) return 1;
+	return TigerNacci(n - 1) + TigerNacci(n - 2) + TigerNacci(n - 3);
+}
+\end{lstlisting}
+\begin{enumerate}[i)]
+\item $\Theta(n^{3}\log n)$
+\item $\Theta(3^{n}\log n)$
+\item $O(3^{n}\log n)$
+\item $\Theta(3^{n})$
+\item $\Theta(n^{2}\log n)$
+\item $\Theta(2^{n}\log n)$
+\item $O(2^{n}\log n)$
+\item $\Theta(2^{n})$
+\end{enumerate}
+\begin{solution}
+    iii) or vii).
+    \par 
+    Suppose the time complexity is $T(n)$, then 
+    $$
+        T(n) = 
+        \begin{cases}
+            T(n-1)  + T(n-2) + T(n-3) + C, &\quad n>3\\
+            C &\quad n\leq 3 
+        \end{cases}
+    $$
+    Let $T(n) = A T(n-1)$, then 
+    $$
+    A^3 = A^2 + A  + 1
+    $$
+    We get 
+    $$
+    A_1 = 1.84, \quad A_2 =-0.42 + 0.61 \I,
+    \quad A_3 = -0.42 - 0.61 \I,
+    $$
+    and 
+    $$
+    T(n) = c_1 \cdot A_1^n + c_2 \cdot A_2^n + c_3 \cdot A_3^n + c_4.
+    $$
+    Notice that $|A_2| = |A_3| < 1$, so when $n$ is really large, the term $c_2 A_2^n$ and 
+    $c_3 A_3^n \to 0$.
+    Therefore,
+    $$
+    T(n) \approx c_1 \cdot A_1^n = \Theta(1.84^n) = O(2^n \log n) = O(3^n \log n)
+    $$
+\end{solution}
+
+\item Sort the following functions with the $\prec$ notation. (10 points)
+\begin{definition}[$\prec$ notation]
+Let $f(n)$ and $g(n)$ be functions from the set of natural numbers to the set of nonnegative real numbers.
+$f(n)$ is said to be $o(g(n))$, written as $f(n)=o(g(n))$, if
+$$\forall c>0,\exists n_{0}:\forall n\ge n_{0},f(n)<c g(n).$$
+Funcitons can be ordered by $\prec$ with its definition: $f\prec g$ iff $f(n)=o(g(n))$. For example,
+$$1 \prec \log n \prec n$$
+\end{definition}
+Sort $(\sqrt{2})^{\log n}, (n+2)!, n^n, 0.2n^{\sqrt{2}},  n^{2/\log n}$ with $\prec$, briefly explain your answer.
+\begin{solution}
+    $(n^{2/\log n})\prec (\sqrt{2})^{\log n} \prec 0.2 n^{\sqrt{2}} \prec (n+2)! \prec n^n$
+    \begin{itemize}
+        \item $(\sqrt{2})^{\log n} = o\left((n+2)!\right)$, $c = 1, n_0 = 1$
+        \item $(n+2)! = o (n^n)$, $c = 1, n_0 =6$
+        \item $(\sqrt{2})^{\log n} = o(0.2n^{\sqrt{2}})$, since $n^{\sqrt{2}} = \sqrt{2} ^ {\sqrt{2} \cdot \log_{\sqrt{2}} n} = (\sqrt{2} ^C) ^{ \log n}$, $C>1$
+        \item $0.2 n ^{\sqrt{2}} = o\left((n+2)!\right)$, $c = 1, n_0 = 1$
+        \item $n^{2/\log n} = o((\sqrt{2})^{\log n})$, $c=1, n_0 = 10^{16}$.
+    \end{itemize}
+\end{solution}
+\end{enumerate}
+
+\section{Master Theorem (20 points)}
+\subsection{Recurrence Relation (10 points)}
+What is the complexity of the following recurrence relation? (5 points each)
+\begin{enumerate}[(a)]
+
+\item $T(n) = \left\{
+\begin{aligned}
+&c_0, &n=1\\
+&8T\left(\dfrac{n}{2}\right)+(n + 1)(n + 2) + c, &n>1\\
+\end{aligned}
+\right.
+$
+
+\begin{solution}
+    $\Theta (n^3)$
+\end{solution}
+
+\item $T(n) = \left\{
+\begin{aligned}
+&c_0, &n=1\\
+&2T\left(\dfrac{n}{4}\right)+2\log n+\sqrt{n}+c, &n>1\\
+\end{aligned}
+\right.
+$
+
+\begin{solution}
+    $\Theta(\sqrt{n} \log n)$
+\end{solution}
+\end{enumerate}
+
+\subsection{Master Theorem on code (10 points)}
+\begin{enumerate}[(a)]
+
+\item 
+Derive the recurrence relation of the TigerNacci function in Problem~\ref{prb:tiger_code}c, then find out its time complexity.
+(Hint: Can you use master theorem here?) (5 points)
+\begin{solution}
+    $\Theta(1.84^n)$, see the procedure above.
+\end{solution}
+
+\item 
+Based on the function below, answer the following question. \textbf{Assume that $helper(n)$ runs in $O(n^6)$ time.} (5 points)
+\begin{lstlisting}[language=c++]
+void problem_2_2_b(int n) {
+	if (n < 3) {
+		return;
+	}
+	int m = static_cast<int>(floor(sqrt(n)))
+	for (int i = 0; i < 281; ++i) {
+		helper(m);
+		for (int j = m; j < i; j++) {
+			helper(m);
+		}
+		problem_2_2_b(n / 3);
+	}
+}
+\end{lstlisting}
+\end{enumerate}
+Calculate the recurrence relation of this function, then find out its time complexity.
+\begin{solution}
+$\Theta()$
+\par 
+Suppose the time complexity is $T(n)$, then due to the recurrence relation
+$$
+T(n) = 281 \cdot T\left(\frac{n}{3}\right) + 281 n ^6 + C.
+$$
+We find that 
+$$
+n ^ {\log_3 281} = n^{5.13} \quad \Rightarrow f(n) = 281 n^6 = \Omega(n ^{\log_3 281 + \varepsilon}),
+$$
+Therefore,
+$$
+T(n) = \Theta(n^6).
+$$
+\end{solution}
+
+
+\section{Sorting Basics (22 points)}
+
+\subsection{Sorting algorithms' working scenarios (16 points)}
+
+Select the most efficient sorting algorithm for each of the following situations. (4 points each)
+\begin{enumerate}[(a)]
+    \item You are sorting a set of electronic files. However, they are huge and you found that copying and moving these files are too expensive. So you want to copy and move them as less as possible.
+    \begin{enumerate}[A)]
+        \item insertion sort
+        \item selection sort
+        \item quick sort
+        \item merge sort
+    \end{enumerate}
+    \begin{solution}
+        B)
+    \end{solution}
+    
+    \item Your friend is transmitting a sorted array of integers to you. However, due to some interference, a few integers in the array have changed their position. This causes the sorted array to become a nearly sorted one.
+    \begin{enumerate}[A)]
+        \item insertion sort
+        \item selection sort
+        \item quick sort
+        \item merge sort
+    \end{enumerate}
+    \begin{solution}
+       A)
+    \end{solution}
+    
+    \item You are dealing with a sequence of integers that are stored in a linked list. This means that it is expensive for you to access integer in a specific position.
+    \begin{enumerate}[A)]
+        \item insertion sort
+        \item selection sort
+        \item quick sort
+        \item merge sort
+    \end{enumerate}
+    \begin{solution}
+        A)
+    \end{solution}
+    
+    \item You are a game programmer in the 1980s. You need to display a relatively small set of the names of defeated enemies in a sorted order as quickly as possible. Since it is old time, the players are used to occasional long time waiting before the display. 
+    \begin{enumerate}[A)]
+        \item insertion sort
+        \item selection sort
+        \item quick sort
+        \item merge sort
+    \end{enumerate}
+    \begin{solution}
+        A)
+    \end{solution}
+\end{enumerate}
+
+\subsection{Brute force or sorting? (6 points)}
+You need to find 100 richest persons from an unsorted list containing wealth of 10000 different persons. Two potential solution are as follows.
+\begin{enumerate}[i)]
+    \item repeat linear search for 100 times. Each time you need to find the richest person.
+    \item convert the list into an array, and then sort the array(complexity O(n logn)) and fetch data from the sorted array.
+\end{enumerate}
+Which solution would you suggest? Assume the time of linear search for 10 items in an unsorted list takes 10 ns and the time for sorting 10 items takes 10 ns. You can neglect the time to convert the list into an array and the time to fetch data from the sorted array.
+
+\begin{solution}
+    I would suggest to perform a sorting algorithm first.
+    \par 
+    \begin{itemize}
+        \item Linear search for 100 times would take $100 \times 10000 = 0.01 [s]$.
+        \item For sorting algorithm, since $C\cdot 10 \times \log 10 = 10 [ns]$, for 10000 terms the 
+        estimated time is $C \cdot 10000 \times \log 10000 = 40000[ns]$.
+    \end{itemize}
+\end{solution}
+
+\section{Improved Insertion Sort (17 points)}
+\subsection{Binary Search (9 points)}
+After Ssy finishes studying sorting algorithm in VE281, he finds himself quite interested about the insertion sort. He quickly implements this sorting algorithm and runs several cases to test his code. However, he finds the performance of this algorithm is not satisfying. Then he decides to improve this insertion sorting algorithm by using binary search instead of linear search. The pseudo code of this algorithm is shown below.
+\begin{algorithm}[H]
+	\textbf{Input}: an integer array a with size n\\
+	\textbf{Output}: the sorted array of a
+	\caption{ImprovedInsertionSort(a[.])}
+	\begin{algorithmic}[1]
+	    \For{i $=$ 1; i $<$ n; i $+=$ 1 }  
+            \State temp = a[i];  
+            \State p = BinarySearch(a, i-1, temp);
+            \For{j $=$ i-1; j $\geq$ p; j $-=$ 1}
+                \State a[j+1] = a[j];
+            \EndFor
+            \State a[j] = temp;
+        \EndFor  
+	\end{algorithmic}  
+\end{algorithm}
+Based on the algorithm above, answer the questions. (3 points each)
+\begin{enumerate}[a)]
+    \item How many data moves needed to be done to sort an array of size n in average?
+    What about the worst case?
+    \item How many comparisons needed to be performed to sort an array of size n in average? What about the worst case?
+    \item What's time complexity of the binary search part and data moving part, respectively? Is this algorithm better than the one with linear search?
+\end{enumerate}
+
+\begin{solution}
+    \begin{enumerate}[a)]
+        \item average case: $n(n-1)/2$, worst case: $n(n+1)$.
+        \item average case: $\log n!$, worst case: $n \log n$.
+        \item search part : $O(n \log n)$, moving part: $O(n^2)$. Therefore
+        this algorithm is a little bit better than the original one, as the 
+        time complexity in the searching part decreases. But, the overall time complexity
+        is still $O(n^2)$.
+    \end{enumerate}
+\end{solution}
+
+\subsection{Improve by Splitting (8 points)}
+After discussing with Wcy, Ssy discovers that insertion sort works fast for small size array. However, when the size n goes large, insertion sort may not be a good choice since its worst case time complexity is $O(n^2)$. He comes up with a new idea that he can split a large size array into small ones, sort them and merge them. The proposed way to improve Insertion sorting is
+\begin{enumerate}[i)]
+    \item Split the unsorted array into k subarrays, each with size $\frac{n}{k}$. The last one may have smaller size to maintain the total size n.
+    \item Sort each subarrays by insertion sort.
+    \item Merge the subarrays into one entire sorted array. This procedure will work as: select the largest integer from k subarrays, then select the second largest integer from k subarrays, etc.
+\end{enumerate}
+Analyze the algorithm described above, find the optimal k for given n and time complexity for this algorithm.
+
+\begin{solution}
+We calculate the time complexity for each part:
+\begin{enumerate}[i)]
+    \item Spilt: constant $C$
+    \item Sort each part: $k \cdot O(n^2 / k^2) = O (n^2 / k) $.
+    \item Merge part: $n \cdot k$
+\end{enumerate}
+Therefore $T(n) = C_1 + C_2 \cdot n^2/k + n\cdot k $, when $k = \lfloor\sqrt{ C_2 \cdot n}\rfloor $ it reaches minimum.
+Namely, $T(n) = O(n\sqrt{n})$.
+
+\end{solution}
+
+\section{Sorting Algorithm Design (13 points)}
+Suppose you are designing a aggregator, you will be given two unsorted arrays of lengths m and n. You need to design an algorithm to find the intersection of these two arrays. Assume there is no duplicates within each array.
+\begin{enumerate}[a)]
+    \item Describe an algorithm with time complexity $O(m log m + n log n)$
+    \item Describe an algorithm with time complexity $O(min(mLogm + nLogm, mLogn + nLogn))$
+    \item For the two algorithms above, do you think one of them is always better than the other? If not, when would you use the algorithm in b)?
+\end{enumerate}
+
+
+\begin{solution}
+    \begin{enumerate}[a)]
+        \item First apply quick sort to the two arrays respectively, the time 
+        complexity is $O(m \log m)$ and $O (n \log n)$. Then run a linear scan to merge 
+        them and the time complexity is $O (m+n)$. So the overall time complexity is $O(m \log m + n \log n)$.
+        \item First run quick sort for the first array, and the time complexity
+        is $O(m \log m)$. Then for every element in the second array, perform a binary search in the first sorted array,
+        and the total time complexity is $O(n \log m)$. In total, the time complexity is $O((m+n) \log m)$. 
+        \par 
+        We can also choose to perform quick sort for the second array and binary search for the first array, then the time complexity would be 
+        $O((m+n)\log n)$. We can choose a smaller one, namely reach a complexity $O(\min (m\log m + n\log m , m\log n + n\log n))$.
+        \item It seems that the time complexity of the second algorithm is always smaller than the 
+        first one. So use b) in any case.
+    \end{enumerate}
+\end{solution}
+
+
+\end{document}

@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Graph\040Search\040MCQs\040\(16\040points\)}{}% 1
+\BOOKMARK [1][-]{section.2}{Topological\040Sort\040\(8\040points\)}{}% 2
+\BOOKMARK [1][-]{section.3}{Minimum\040Spanning\040Tree\040\(12\040points\)}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Delete\040an\040edge\040\(6\040points\)}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Add\040an\040edge\040\(6\040points\)}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Shortest\040Path\040\(4\040points\)}{}% 6
+\BOOKMARK [1][-]{section.5}{Dynamic\040Programming\040\(60\040points\)}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Basic\040Case\040\(12\040points\)}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Do\040it\040twice?\040\(24\040points\)}{section.5}% 9
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Simple\040repeat\040\(10\040points\)}{subsection.5.2}% 10
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Double\040the\040result\040table\040\(14\040points\)}{subsection.5.2}% 11
+\BOOKMARK [2][-]{subsection.5.3}{How\040to\040save\040memory?\040\(12\040points\)}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{Does\040optimization\040end\040here?\040\(12\040points\)}{section.5}% 13

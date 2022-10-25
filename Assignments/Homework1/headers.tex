@@ -1,0 +1,322 @@
+%%% theorems
+
+\theoremstyle{plain}            % following are "theorem" style
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{openproblem}[theorem]{Open Problem}
+
+\theoremstyle{definition}       % following are def style
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{protocol}[theorem]{Protocol}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\theoremstyle{remark}           % following are remark style
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+%\newtheorem*{solution}{Solution}
+
+%%% special sets
+\newcommand{\bit}{\ensuremath{\{0,1\}}}
+\newcommand{\bitt}{\ensuremath{\{-1,1\}}}
+\newcommand{\ball}{\ensuremath{\mathcal{B}}}
+\newcommand{\sph}{\ensuremath{\mathbb{S}}}
+\newcommand{\odisc}[2]{\ensuremath{D(#1, #2)}}
+\newcommand{\cdisc}[2]{\ensuremath{\bar{D}(#1, #2)}}
+\newcommand{\emp}{\varnothing}
+
+% constants
+\newcommand{\E}{\ensuremath{\mathrm{e}}}
+\newcommand{\I}{\ensuremath{\mathrm{i}}}
+\newcommand{\Id}{\ensuremath{\mathrm{I}}}
+\newcommand{\paulix}{\ensuremath{\mathrm{X}}}
+\newcommand{\pauliy}{\ensuremath{\mathrm{Y}}}
+\newcommand{\pauliz}{\ensuremath{\mathrm{Z}}}
+
+% font for general-purpose algorithms
+\newcommand{\algo}[1]{\ensuremath{\mathsf{#1}}}
+% font for general-purpose computational problems
+\newcommand{\problem}[1]{\ensuremath{\mathsf{#1}}}
+% font for complexity classes
+\newcommand{\class}[1]{\ensuremath{\mathsf{#1}}}
+
+% asymptotics
+\DeclareMathOperator{\poly}{poly}
+\DeclareMathOperator{\polylog}{polylog}
+\DeclareMathOperator{\negl}{negl}
+\DeclareMathOperator{\bigO}{O}
+\DeclareMathOperator{\litO}{o}
+\DeclareMathOperator{\Otil}{\tilde{O}}
+\DeclareMathOperator{\Ostar}{O^*}
+
+%%% "LEFT-RIGHT" PAIRS OF SYMBOLS
+
+% inner product
+\DeclarePairedDelimiter\inner{\langle}{\rangle}
+% absolute value
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+% a set
+\DeclarePairedDelimiter\set{\{}{\}}
+% parens
+\DeclarePairedDelimiter\parens{(}{)}
+% tuple, alias for parens
+\DeclarePairedDelimiter\tuple{(}{)}
+% square brackets
+\DeclarePairedDelimiter\bracks{[}{]}
+% rounding off
+\DeclarePairedDelimiter\round{\lfloor}{\rceil}
+% floor function
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+% ceiling function
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+% length of some vector, element
+\DeclarePairedDelimiter\length{\lVert}{\rVert}
+% "lifting" of a residue class
+\DeclarePairedDelimiter\lift{\llbracket}{\rrbracket}
+\DeclarePairedDelimiter\len{\lvert}{\rvert}
+% bra-kets
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\newcommand{\braket}[2]{\ensuremath{\langle #1 \vert #2 \rangle}}
+\newcommand{\ketbra}[2]{\ensuremath{\lvert #1 \rangle \langle #2 \rvert}}
+
+%%% spacing
+
+\newcommand{\ws}{\hspace{1pt}}
+\newcommand{\wws}{\hspace{2pt}}
+\newcommand{\hs}{\hspace{4pt}}
+\newcommand{\hhs}{\hspace{8pt}}
+\newcommand{\hhhs}{\hspace{12pt}}
+
+%%% LISTS
+
+\newcommand{\oneto}{1, \ldots,}
+\newcommand{\onetop}{1 \cdots,}
+\newcommand{\zeroto}{0, \ldots,}
+\newcommand{\zerotop}{0 \cdots,}
+\newcommand{\perm}[1]{\mathbf{(#1)}}
+\newcommand{\permv}[1]{(#1)}
+\newcommand{\varind}[2]{#1_1, \ldots, #1_#2}
+\newcommand{\varindz}[2]{#1_0, \ldots, #1_#2}
+\newcommand{\varindp}[2]{#1_1 \cdots #1_#2}
+\newcommand{\varindpz}[2]{#1_0 \cdots #1_#2}
+\newcommand{\seq}[2]{(#1_#2)_{#2=1}^\infty}
+\newcommand{\seqz}[2]{(#1_#2)_{#2=0}^\infty}
+
+%%% MATH OPERATORS
+
+%\DeclareMathOperator{\pr}{\mathbf{P}}
+%\DeclareMathOperator{\ex}{\mathbf{E}}
+\DeclareMathOperator{\pr}{P}
+\DeclareMathOperator{\ex}{E}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\dkl}{D_{KL}}
+\DeclareMathOperator{\entr}{H}
+\DeclareMathOperator{\fid}{F}
+\DeclareMathOperator{\dist}{D}
+\DeclareMathOperator{\ad}{ad}
+
+% hats
+
+\newcommand{\fhat}{\ensuremath{\hat{f}}}
+\newcommand{\phat}{\ensuremath{\hat{p}}}
+\newcommand{\that}{\ensuremath{\hat{t}}}
+
+%%% BLACKBOARD SYMBOLS
+
+%\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\D}{\ensuremath{\mathbb{D}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+%\newcommand{\G}{\ensuremath{\mathbb{G}}}
+\newcommand{\J}{\ensuremath{\mathbb{J}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\T}{\ensuremath{\mathbb{T}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\QR}{\ensuremath{\mathbb{QR}}}
+
+% sets in calligraphic type
+
+\newcommand{\calD}{\ensuremath{\mathcal{D}}}
+\newcommand{\calF}{\ensuremath{\mathcal{F}}}
+\newcommand{\calG}{\ensuremath{\mathcal{G}}}
+\newcommand{\calH}{\ensuremath{\mathcal{H}}}
+\newcommand{\calI}{\ensuremath{\mathcal{I}}}
+\newcommand{\calL}{\ensuremath{\mathcal{L}}}
+\newcommand{\calN}{\ensuremath{\mathcal{N}}}
+\newcommand{\calP}{\ensuremath{\mathcal{P}}}
+\newcommand{\calS}{\ensuremath{\mathcal{S}}}
+\newcommand{\calX}{\ensuremath{\mathcal{X}}}
+\newcommand{\calY}{\ensuremath{\mathcal{Y}}}
+
+% matrices and vectors
+
+\newcommand{\matA}{\ensuremath{\mathbf{A}}}
+\newcommand{\matB}{\ensuremath{\mathbf{B}}}
+\newcommand{\matC}{\ensuremath{\mathbf{C}}}
+\newcommand{\matD}{\ensuremath{\mathbf{D}}}
+\newcommand{\matE}{\ensuremath{\mathbf{E}}}
+\newcommand{\matF}{\ensuremath{\mathbf{F}}}
+\newcommand{\matG}{\ensuremath{\mathbf{G}}}
+\newcommand{\matH}{\ensuremath{\mathbf{H}}}
+\newcommand{\matI}{\ensuremath{\mathbf{I}}}
+\newcommand{\matJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\matK}{\ensuremath{\mathbf{K}}}
+\newcommand{\matL}{\ensuremath{\mathbf{L}}}
+\newcommand{\matM}{\ensuremath{\mathbf{M}}}
+\newcommand{\matN}{\ensuremath{\mathbf{N}}}
+\newcommand{\matO}{\ensuremath{\mathbf{O}}}
+\newcommand{\matP}{\ensuremath{\mathbf{P}}}
+\newcommand{\matQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\matR}{\ensuremath{\mathbf{R}}}
+\newcommand{\matS}{\ensuremath{\mathbf{S}}}
+\newcommand{\matT}{\ensuremath{\mathbf{T}}}
+\newcommand{\matU}{\ensuremath{\mathbf{U}}}
+\newcommand{\matV}{\ensuremath{\mathbf{V}}}
+\newcommand{\matW}{\ensuremath{\mathbf{W}}}
+\newcommand{\matX}{\ensuremath{\mathbf{X}}}
+\newcommand{\matY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\matZ}{\ensuremath{\mathbf{Z}}}
+\newcommand{\matzero}{\ensuremath{\mathbf{0}}}
+
+\newcommand{\veca}{\ensuremath{\mathbf{a}}}
+\newcommand{\vecb}{\ensuremath{\mathbf{b}}}
+\newcommand{\vecc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vecd}{\ensuremath{\mathbf{d}}}
+\newcommand{\vece}{\ensuremath{\mathbf{e}}}
+\newcommand{\vecf}{\ensuremath{\mathbf{f}}}
+\newcommand{\vecg}{\ensuremath{\mathbf{g}}}
+\newcommand{\vech}{\ensuremath{\mathbf{h}}}
+\newcommand{\veck}{\ensuremath{\mathbf{k}}}
+\newcommand{\vecm}{\ensuremath{\mathbf{m}}}
+\newcommand{\vecp}{\ensuremath{\mathbf{p}}}
+\newcommand{\vecq}{\ensuremath{\mathbf{q}}}
+\newcommand{\vecr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecs}{\ensuremath{\mathbf{s}}}
+\newcommand{\vect}{\ensuremath{\mathbf{t}}}
+\newcommand{\vecu}{\ensuremath{\mathbf{u}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vecw}{\ensuremath{\mathbf{w}}}
+\newcommand{\vecx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vecy}{\ensuremath{\mathbf{y}}}
+\newcommand{\vecz}{\ensuremath{\mathbf{z}}}
+\newcommand{\veczero}{\ensuremath{\mathbf{0}}}
+\newcommand{\vecone}{\ensuremath{\mathbf{1}}}
+
+\newcommand{\vecell}{\ensuremath{\boldsymbol\ell}}
+\newcommand{\vecalpha}{\ensuremath{\boldsymbol\alpha}}
+\newcommand{\vecbeta}{\ensuremath{\boldsymbol\beta}}
+\newcommand{\veceta}{\ensuremath{\boldsymbol\eta}}
+\newcommand{\vecmu}{\ensuremath{\boldsymbol\mu}}
+\newcommand{\vecphi}{\ensuremath{\boldsymbol\phi}}
+\newcommand{\vecsigma}{\ensuremath{\boldsymbol\sigma}}
+\newcommand{\vectheta}{\ensuremath{\boldsymbol\theta}}
+\newcommand{\vecxi}{\ensuremath{\boldsymbol\xi}}
+
+%%% misc
+
+\newcommand{\ind}{\ensuremath{\mathbf{1}}}
+
+\newcommand{\congmod}[3]{#1 \equiv #2 \textrm{ modulo } #3}
+
+\newcommand{\dee}{\,\mathrm{d}}
+\newcommand{\de}{\mathrm{d}}
+\newcommand{\dx}{\,\mathrm{d} x}
+
+\newcommand{\ol}{\overline}
+\newcommand{\inv}[1]{\ensuremath{#1^{-1}}}
+\newcommand{\tsp}[1]{\ensuremath{#1^{\top}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ph}{\varphi}
+
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\rsqa}{\rightsquigarrow}
+
+\newcommand{\trl}{\triangleleft}
+\newcommand{\trr}{\triangleright}
+
+\newcommand{\func}[3]{#1: #2 \to #3}
+\newcommand{\dd}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+\newcommand{\ptl}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\prtl}[2]{\frac{\partial #1}{\partial #2}}
+
+\newcommand{\matrixtt}[4]{
+  \begin{pmatrix*}[r]
+        #1 & #2 \\
+        #3 & #4
+    \end{pmatrix*}
+}
+
+%%% for homework and section notes
+
+\newcommand{\commonheader}[2]{
+    \pagestyle{headandfoot}
+    \setlength{\headheight}{26pt}
+    \setlength{\headsep}{30pt}
+
+    \header
+        {\small{\textbf{VE281: Data Structures and Algorithms}} \\ \footnotesize{\textbf{UM-SJTU Joint Institute, SU2021}}}
+        {#1}
+        {#2}
+
+    \firstpageheadrule
+    \runningheadrule
+
+    \footer
+        {}
+        {\thepage}
+        {}
+}
+
+\newcommand{\hwheader}{
+    \commonheader
+        {\textbf{Homework \hwnum}}
+        {\small \textbf{Due at \duedate}}
+}
+
+\newcommand{\hwslnheader}{
+    \commonheader
+    	{}
+        {\textbf{Solutions to Homework \hwnum}}
+    \printanswers
+}
+
+\newcommand{\notesheader}{
+    \commonheader
+        {\Large \textbf{Section Notes \sectionnum}}
+    	{}
+}
+
+\newcommand{\hint}[1]{
+\emph{Hint}: #1
+}
+
+% for effort questions
+\let\Eitem=\relax
+\def\effortE{\textbf{E}~}
+\makeatletter
+\def\Eitem{%
+    \expandafter\let\expandafter\originallabel\csname labelenum\romannumeral\@enumdepth\endcsname
+    \expandafter\def\csname labelenum\romannumeral\@enumdepth\expandafter\endcsname\expandafter{%
+        \expandafter\effortE\originallabel}%
+    \item
+    \expandafter\let\csname labelenum\romannumeral\@enumdepth\endcsname\originallabel
+}
+\makeatother
+
+\allowdisplaybreaks

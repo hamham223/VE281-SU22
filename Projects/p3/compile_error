@@ -1,0 +1,239 @@
+In file included from main.cpp:1:
+kdtree.hpp: In instantiation of ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 0; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’:
+kdtree.hpp:477:9:   required from ‘bool KDTree<std::tuple<_Elements ...>, ValueType>::erase(const Key&) [with ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+main.cpp:33:33:   required from here
+kdtree.hpp:374:34: error: no match for ‘operator=’ (operand types are ‘const std::tuple<int, int>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’})
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1205:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type = const std::tuple<int, int>&]’ <near match>
+ 1205 |       operator=(typename conditional<__assignable<const _T1&, const _T2&>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1205:7: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1215:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type = std::tuple<int, int>&&]’ <near match>
+ 1215 |       operator=(typename conditional<__assignable<_T1, _T2>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1215:7: note:   conversion of argument 1 would be ill-formed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: error: cannot bind rvalue reference of type ‘std::conditional<true, std::tuple<int, int>&&, std::__nonesuch_no_braces&&>::type’ {aka ‘std::tuple<int, int>&&’} to lvalue of type ‘const Key’ {aka ‘const std::tuple<int, int>’}
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1226:2: note: candidate: ‘std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::tuple<_U1, _U2>&) [with _U1 = int; _U2 = int; _T1 = int; _T2 = int; std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> = std::tuple<int, int>&]’ <near match>
+ 1226 |  operator=(const tuple<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1226:2: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1235:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::tuple<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1235 |  operator=(tuple<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1235:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   types ‘std::tuple<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1244:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1244 |  operator=(const pair<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1244:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   ‘const Key’ {aka ‘const std::tuple<int, int>’} is not derived from ‘const std::pair<_T1, _T2>’
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1254:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1254 |  operator=(pair<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1254:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   types ‘std::pair<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  374 |                 node->data.first = min->key();
+kdtree.hpp:380:34: error: no match for ‘operator=’ (operand types are ‘const std::tuple<int, int>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’})
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1205:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type = const std::tuple<int, int>&]’ <near match>
+ 1205 |       operator=(typename conditional<__assignable<const _T1&, const _T2&>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1205:7: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1215:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type = std::tuple<int, int>&&]’ <near match>
+ 1215 |       operator=(typename conditional<__assignable<_T1, _T2>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1215:7: note:   conversion of argument 1 would be ill-formed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: error: cannot bind rvalue reference of type ‘std::conditional<true, std::tuple<int, int>&&, std::__nonesuch_no_braces&&>::type’ {aka ‘std::tuple<int, int>&&’} to lvalue of type ‘const Key’ {aka ‘const std::tuple<int, int>’}
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1226:2: note: candidate: ‘std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::tuple<_U1, _U2>&) [with _U1 = int; _U2 = int; _T1 = int; _T2 = int; std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> = std::tuple<int, int>&]’ <near match>
+ 1226 |  operator=(const tuple<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1226:2: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1235:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::tuple<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1235 |  operator=(tuple<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1235:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   types ‘std::tuple<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1244:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1244 |  operator=(const pair<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1244:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   ‘const Key’ {aka ‘const std::tuple<int, int>’} is not derived from ‘const std::pair<_T1, _T2>’
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1254:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1254 |  operator=(pair<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1254:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   types ‘std::pair<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  380 |                 node->data.first = max->key();
+kdtree.hpp: In instantiation of ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 1; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’:
+kdtree.hpp:362:24:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 0; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+kdtree.hpp:477:9:   required from ‘bool KDTree<std::tuple<_Elements ...>, ValueType>::erase(const Key&) [with ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+main.cpp:33:33:   required from here
+kdtree.hpp:374:34: error: no match for ‘operator=’ (operand types are ‘const std::tuple<int, int>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’})
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1205:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type = const std::tuple<int, int>&]’ <near match>
+ 1205 |       operator=(typename conditional<__assignable<const _T1&, const _T2&>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1205:7: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1215:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type = std::tuple<int, int>&&]’ <near match>
+ 1215 |       operator=(typename conditional<__assignable<_T1, _T2>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1215:7: note:   conversion of argument 1 would be ill-formed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: error: cannot bind rvalue reference of type ‘std::conditional<true, std::tuple<int, int>&&, std::__nonesuch_no_braces&&>::type’ {aka ‘std::tuple<int, int>&&’} to lvalue of type ‘const Key’ {aka ‘const std::tuple<int, int>’}
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1226:2: note: candidate: ‘std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::tuple<_U1, _U2>&) [with _U1 = int; _U2 = int; _T1 = int; _T2 = int; std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> = std::tuple<int, int>&]’ <near match>
+ 1226 |  operator=(const tuple<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1226:2: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1235:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::tuple<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1235 |  operator=(tuple<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1235:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   types ‘std::tuple<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1244:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1244 |  operator=(const pair<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1244:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   ‘const Key’ {aka ‘const std::tuple<int, int>’} is not derived from ‘const std::pair<_T1, _T2>’
+  374 |                 node->data.first = min->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1254:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1254 |  operator=(pair<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1254:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:374:34: note:   types ‘std::pair<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  374 |                 node->data.first = min->key();
+kdtree.hpp:380:34: error: no match for ‘operator=’ (operand types are ‘const std::tuple<int, int>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’})
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1205:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<const _T1&, const _T2&>(), const std::tuple<_T1, _T2>&, const std::__nonesuch_no_braces&>::type = const std::tuple<int, int>&]’ <near match>
+ 1205 |       operator=(typename conditional<__assignable<const _T1&, const _T2&>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1205:7: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1215:7: note: candidate: ‘std::tuple<_T1, _T2>& std::tuple<_T1, _T2>::operator=(typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type) [with _T1 = int; _T2 = int; typename std::conditional<__assignable<_T1, _T2>(), std::tuple<_T1, _T2>&&, std::__nonesuch_no_braces&&>::type = std::tuple<int, int>&&]’ <near match>
+ 1215 |       operator=(typename conditional<__assignable<_T1, _T2>(),
+      |       ^~~~~~~~
+/usr/include/c++/9/tuple:1215:7: note:   conversion of argument 1 would be ill-formed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: error: cannot bind rvalue reference of type ‘std::conditional<true, std::tuple<int, int>&&, std::__nonesuch_no_braces&&>::type’ {aka ‘std::tuple<int, int>&&’} to lvalue of type ‘const Key’ {aka ‘const std::tuple<int, int>’}
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1226:2: note: candidate: ‘std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::tuple<_U1, _U2>&) [with _U1 = int; _U2 = int; _T1 = int; _T2 = int; std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> = std::tuple<int, int>&]’ <near match>
+ 1226 |  operator=(const tuple<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1226:2: note:   passing ‘const std::tuple<int, int>*’ as ‘this’ argument discards qualifiers
+/usr/include/c++/9/tuple:1235:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::tuple<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1235 |  operator=(tuple<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1235:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   types ‘std::tuple<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1244:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<const _U1&, const _U2&>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1244 |  operator=(const pair<_U1, _U2>& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1244:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   ‘const Key’ {aka ‘const std::tuple<int, int>’} is not derived from ‘const std::pair<_T1, _T2>’
+  380 |                 node->data.first = max->key();
+In file included from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/tuple:1254:2: note: candidate: ‘template<class _U1, class _U2> std::__enable_if_t<__assignable<_U1, _U2>(), std::tuple<_T1, _T2>&> std::tuple<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = int; _T2 = int]’
+ 1254 |  operator=(pair<_U1, _U2>&& __in)
+      |  ^~~~~~~~
+/usr/include/c++/9/tuple:1254:2: note:   template argument deduction/substitution failed:
+In file included from main.cpp:1:
+kdtree.hpp:380:34: note:   types ‘std::pair<_T1, _T2>’ and ‘const Key’ {aka ‘const std::tuple<int, int>’} have incompatible cv-qualifiers
+  380 |                 node->data.first = max->key();
+kdtree.hpp: In instantiation of ‘static bool KDTree<std::tuple<_Elements ...>, ValueType>::compareKey(const Key&, const Key&, Compare) [with long unsigned int DIM = 0; Compare = std::less<int>; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’:
+kdtree.hpp:286:40:   required from ‘static KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::compareNode(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, KDTree<std::tuple<_Elements ...>, ValueType>::Node*, Compare) [with long unsigned int DIM = 0; Compare = std::less<int>; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:88:36:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::minNode(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, KDTree<std::tuple<_Elements ...>, ValueType>::Node*) [with long unsigned int DIM_CMP = 0; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:304:17:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::findMin(KDTree<std::tuple<_Elements ...>, ValueType>::Node*) [with long unsigned int DIM_CMP = 0; long unsigned int DIM = 1; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:373:24:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 0; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+kdtree.hpp:477:9:   required from ‘bool KDTree<std::tuple<_Elements ...>, ValueType>::erase(const Key&) [with ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+main.cpp:33:33:   required from here
+kdtree.hpp:269:23: error: no match for call to ‘(std::less<int>) (const Key&, const Key&)’
+  269 |         return compare(a, b);
+      |                ~~~~~~~^~~~~~
+In file included from /usr/include/c++/9/string:48,
+                 from /usr/include/c++/9/stdexcept:39,
+                 from /usr/include/c++/9/array:39,
+                 from /usr/include/c++/9/tuple:39,
+                 from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/bits/stl_function.h:385:7: note: candidate: ‘constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]’
+  385 |       operator()(const _Tp& __x, const _Tp& __y) const
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/stl_function.h:385:29: note:   no known conversion for argument 1 from ‘const Key’ {aka ‘const std::tuple<int, int>’} to ‘const int&’
+  385 |       operator()(const _Tp& __x, const _Tp& __y) const
+      |                  ~~~~~~~~~~~^~~
+In file included from main.cpp:1:
+kdtree.hpp: In instantiation of ‘static bool KDTree<std::tuple<_Elements ...>, ValueType>::compareKey(const Key&, const Key&, Compare) [with long unsigned int DIM = 1; Compare = std::less<int>; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’:
+kdtree.hpp:286:40:   required from ‘static KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::compareNode(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, KDTree<std::tuple<_Elements ...>, ValueType>::Node*, Compare) [with long unsigned int DIM = 1; Compare = std::less<int>; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:88:36:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::minNode(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, KDTree<std::tuple<_Elements ...>, ValueType>::Node*) [with long unsigned int DIM_CMP = 1; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:304:17:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::findMin(KDTree<std::tuple<_Elements ...>, ValueType>::Node*) [with long unsigned int DIM_CMP = 1; long unsigned int DIM = 0; ValueType = char; KeyTypes = {int, int}]’
+kdtree.hpp:373:24:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 1; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+kdtree.hpp:362:24:   required from ‘KDTree<std::tuple<_Elements ...>, ValueType>::Node* KDTree<std::tuple<_Elements ...>, ValueType>::erase(KDTree<std::tuple<_Elements ...>, ValueType>::Node*, const Key&) [with long unsigned int DIM = 0; ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+kdtree.hpp:477:9:   required from ‘bool KDTree<std::tuple<_Elements ...>, ValueType>::erase(const Key&) [with ValueType = char; KeyTypes = {int, int}; KDTree<std::tuple<_Elements ...>, ValueType>::Key = std::tuple<int, int>]’
+main.cpp:33:33:   required from here
+kdtree.hpp:269:23: error: no match for call to ‘(std::less<int>) (const Key&, const Key&)’
+  269 |         return compare(a, b);
+      |                ~~~~~~~^~~~~~
+In file included from /usr/include/c++/9/string:48,
+                 from /usr/include/c++/9/stdexcept:39,
+                 from /usr/include/c++/9/array:39,
+                 from /usr/include/c++/9/tuple:39,
+                 from kdtree.hpp:1,
+                 from main.cpp:1:
+/usr/include/c++/9/bits/stl_function.h:385:7: note: candidate: ‘constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]’
+  385 |       operator()(const _Tp& __x, const _Tp& __y) const
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/stl_function.h:385:29: note:   no known conversion for argument 1 from ‘const Key’ {aka ‘const std::tuple<int, int>’} to ‘const int&’
+  385 |       operator()(const _Tp& __x, const _Tp& __y) const
+      |                  ~~~~~~~~~~~^~~
+make: *** [Makefile:2：all] 错误 1
